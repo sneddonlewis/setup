@@ -1,0 +1,16 @@
+  - name: Install sdkman
+    shell: curl -s "https://get.sdkman.io" | bash 
+    tags:
+    - java
+  - name: Go to home
+    shell: cd ~
+    tags:
+    - java
+  - name: Init sdkman
+    shell: sudo source "$HOME/.sdkman/bin/sdkman-init.sh"
+    tags:
+    - java
+  - name: Install default Java Temurin
+    shell: sdk install java
+    tags:
+    - java

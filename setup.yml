@@ -10,19 +10,10 @@
         - node
         - zsh
         - java
+        - vim
   tasks:
   - include: tasks/zsh.yml
+  - include: tasks/vim.yml
     #- include: tasks/node.yml
-  - name: Install sdkman
-    shell: curl -s "https://get.sdkman.io" | bash 
-    tags:
-    - java
-  - name: Init sdkman
-    shell: source "$HOME/.sdkman/bin/sdkman-init.sh"
-    tags:
-    - java
-  - name: Install default Java Temurin
-    shell: sdk install java
-    tags:
-    - java
-
+    # node takes forever and sdkman errors out
+  - include: tasks/java.yml
