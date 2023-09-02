@@ -4,13 +4,10 @@
   - name: Install zsh
     apt: name=zsh
   - name: Change Shell
-    shell: chsh -s `which zsh`
-      #- name: Install oh my zsh
-    #shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-      #- name: Install the zsh plugin autosuggestions
-    #ansible.builtin.git:
-    #repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
-    #dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
-        #- name: Update zshrc for autosuggestions
-        #shell: sed -i 's/(git/(git zsh-autosuggestions' ~/.zshrc
-
+    shell: zsh
+  - name: Install oh my zsh
+    shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  - name: Install the zsh plugin autosuggestions
+    ansible.builtin.git:
+      repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+      dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
