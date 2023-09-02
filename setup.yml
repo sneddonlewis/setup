@@ -4,9 +4,12 @@
     - name: Update cache
       apt:
         update_cache: true
+      apt: name=unzip
+      apt: name=zip
       tags:
         - node
         - zsh
+        - java
   tasks:
   - name: Install zsh
     apt: name=zsh
@@ -41,4 +44,16 @@
     shell: n 14
     tags:
     - node
+  - name: Install sdkman
+    shell: curl -s "https://get.sdkman.io" | bash 
+    tags:
+    - java
+  - name: Init sdkman
+    shell: source "$HOME/.sdkman/bin/sdkman-init.sh"
+    tags:
+    - java
+  - name: Install default Java Temurin
+    shell: sdk install java
+    tags:
+    - java
 
