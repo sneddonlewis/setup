@@ -7,12 +7,19 @@
       apt: name=unzip
       apt: name=zip
       tags:
+        - install
+        - core
+        - dotfiles
+        - stow
         - node
         - zsh
         - java
         - neovim
         - git-personal
   tasks:
+  - include: tasks/dotfiles.yml
+  #- include: tasks/core-setup.yml
+  # installing all the core things takes forever
   - include: tasks/zsh.yml
   - include: tasks/vim.yml
   - include: tasks/git-setup.yml
