@@ -10,7 +10,7 @@
         - node
         - zsh
         - java
-        - vim
+        - neovim
         - git-personal
   tasks:
   - include: tasks/zsh.yml

@@ -14,3 +14,11 @@ Run the playbook passing the entry YAML file
 ```bash
 ansible-playbook setup.yml
 ```
+
+# TODOs
+
+- Fix Sdkman install and Java LTS
+- Install dotfiles with stow probably
+- Other compilers; clang, gcc, rust, go
+- Chrome
+- DVORAK layout
