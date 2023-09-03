@@ -11,9 +11,11 @@
         - zsh
         - java
         - vim
+        - git-personal
   tasks:
   - include: tasks/zsh.yml
   - include: tasks/vim.yml
+  - include: tasks/git-setup.yml
     #- include: tasks/node.yml
     # node takes forever and sdkman errors out
   - include: tasks/java.yml
