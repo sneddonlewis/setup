@@ -1,6 +1,7 @@
 - name: Create 'lewis' User
   user:
     name: lewis
+    # password needs to be hashed
     password: "root"
     createhome: yes
     state: present

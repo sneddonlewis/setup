@@ -20,8 +20,8 @@
   tasks:
   # dotfiles errors
   #- include: tasks/dotfiles.yml
-  - include: tasks/core-setup.yml
-  - include: tasks/chrome.yml
+  #- include: tasks/core-setup.yml
+  #- include: tasks/chrome.yml
   - include: tasks/zsh.yml
   - include: tasks/vim.yml
   - include: tasks/git-setup.yml
