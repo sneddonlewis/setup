@@ -16,10 +16,11 @@
         - java
         - neovim
         - git-personal
+        - chrome
   tasks:
   - include: tasks/dotfiles.yml
-  #- include: tasks/core-setup.yml
-  # installing all the core things takes forever
+  - include: tasks/core-setup.yml
+  - include: tasks/chrome.yml
   - include: tasks/zsh.yml
   - include: tasks/vim.yml
   - include: tasks/git-setup.yml
