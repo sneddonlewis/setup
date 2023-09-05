@@ -3,12 +3,14 @@
   shell: "curl -s https://get.sdkman.io | bash"
   args:
     creates: "/home/{{ your_username }}/.sdkman"
-    tags: [sdkman]
+    tags:
+    - java
 
 - name: Source SDKMAN! setup script
   become_user: lewis
   shell: "source '/home/{{ your_username }}/.sdkman/bin/sdkman-init.sh'"
-  tags: [sdkman]
+  tags:
+  - java
   environment:
     SDKMAN_CANDIDATES_API: https://api.sdkman.io/2/candidates
     SDKMAN_PLATFORM: linux
@@ -16,4 +18,5 @@
 - name: Install default Java version
   become_user: lewis
   shell: "sdk install java"
-  tags: [java]
+  tags:
+  - java
