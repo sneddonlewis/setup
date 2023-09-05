@@ -4,11 +4,13 @@
     password: "root"
     createhome: yes
     state: present
-  tags: user
+  tags:
+  - core
 
 - name: Add 'lewis' to the sudo group
   user:
     name: lewis
     groups: sudo
     append: yes
-  tags: user
+  tags:
+  - core
