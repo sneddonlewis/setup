@@ -22,34 +22,11 @@
     state: present
   when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
 
-- name: Install Chrome Extensions
-  become_user: lewis
-  community.general.chrome_extension:
-    name: "Void Theme - Black and Minimal"
-    state: present
-  tags:
-  - chrome
+#- name: Install LastPass Extension
+#  become_user: lewis
+#  community.general.chrome_extension:
+#    name: "LastPass"
+#    state: present
+#  tags:
+#  - chrome
 
-- name: Install LastPass Extension
-  become_user: lewis
-  community.general.chrome_extension:
-    name: "LastPass"
-    state: present
-  tags:
-  - chrome
-
-- name: Install JSON Formatter Extension
-  become_user: lewis
-  community.general.chrome_extension:
-    name: "JSON Formatter"
-    state: present
-  tags:
-  - chrome
-
-- name: Install Vimium Extension
-  become_user: lewis
-  community.general.chrome_extension:
-    name: "Vimium"
-    state: present
-  tags: 
-  - chrome
