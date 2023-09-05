@@ -23,8 +23,8 @@
   #- include: tasks/core-setup.yml
   #- include: tasks/chrome.yml
   - include: tasks/zsh.yml
+  - include: tasks/java.yml
   - include: tasks/vim.yml
   - include: tasks/git-setup.yml
     #- include: tasks/node.yml
     # node takes forever and sdkman errors out
-  - include: tasks/java.yml
