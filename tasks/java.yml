@@ -1,16 +1,19 @@
-  - name: Install sdkman
-    shell: curl -s "https://get.sdkman.io" | bash 
-    tags:
-    - java
-  - name: Go to home
-    shell: cd ~
-    tags:
-    - java
-  - name: Init sdkman
-    shell: sudo source "$HOME/.sdkman/bin/sdkman-init.sh"
-    tags:
-    - java
-  - name: Install default Java Temurin
-    shell: sdk install java
-    tags:
-    - java
+- name: Install SDKMAN!
+  become_user: lewis
+  shell: "curl -s https://get.sdkman.io | bash"
+  args:
+    creates: "/home/{{ your_username }}/.sdkman"
+    tags: [sdkman]
+
+- name: Source SDKMAN! setup script
+  become_user: lewis
+  shell: "source '/home/{{ your_username }}/.sdkman/bin/sdkman-init.sh'"
+  tags: [sdkman]
+  environment:
+    SDKMAN_CANDIDATES_API: https://api.sdkman.io/2/candidates
+    SDKMAN_PLATFORM: linux
+
+- name: Install default Java version
+  become_user: lewis
+  shell: "sdk install java"
+  tags: [java]
